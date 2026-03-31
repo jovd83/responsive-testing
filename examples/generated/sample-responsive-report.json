@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "skill": "responsive-testing",
+  "generated_at": "2026-03-28T10:00:00Z",
+  "framework": "playwright",
+  "target": "checkout page",
+  "command": "npx playwright test tests/checkout.spec.ts --project=chromium",
+  "reused_tests": [
+    "tests/checkout.spec.ts"
+  ],
+  "new_tests": [],
+  "viewports": [
+    {
+      "name": "mobile-small",
+      "width": 375,
+      "height": 667,
+      "category": "mobile"
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 768,
+      "height": 1024,
+      "category": "tablet"
+    },
+    {
+      "name": "desktop-wide",
+      "width": 1440,
+      "height": 900,
+      "category": "desktop"
+    }
+  ],
+  "results": [
+    {
+      "test": "checkout happy path",
+      "viewport": "desktop-wide",
+      "status": "passed",
+      "duration_ms": 4132,
+      "notes": "Desktop checkout layout remained stable and primary actions stayed visible.",
+      "artifacts": [
+        "desktop-wide-checkout.png"
+      ]
+    },
+    {
+      "test": "checkout happy path",
+      "viewport": "mobile-small",
+      "status": "failed",
+      "duration_ms": 4891,
+      "notes": "Primary checkout button clipped below sticky footer.",
+      "artifacts": [
+        "mobile-small-checkout.png"
+      ]
+    },
+    {
+      "test": "checkout happy path",
+      "viewport": "tablet-portrait",
+      "status": "passed",
+      "duration_ms": 4388,
+      "notes": "Tablet checkout layout remained stable and form sections stayed visible.",
+      "artifacts": [
+        "tablet-portrait-checkout.png"
+      ]
+    }
+  ],
+  "summary": {
+    "total_results": 3,
+    "passed": 2,
+    "failed": 1,
+    "skipped": 0,
+    "viewports_tested": 3
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "viewport": "mobile-small",
+      "area": "checkout footer",
+      "message": "Primary checkout button is partially hidden by the sticky footer.",
+      "artifact": "mobile-small-checkout.png"
+    }
+  ],
+  "artifacts": [
+    "desktop-wide-checkout.png",
+    "mobile-small-checkout.png",
+    "tablet-portrait-checkout.png"
+  ],
+  "next_actions": [
+    "Adjust the sticky footer layout for narrow mobile widths.",
+    "Rerun checkout responsive coverage after the layout fix."
+  ]
+}

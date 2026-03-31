@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Testing Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.5;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    h1, h2 {
+      color: #0f172a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    th, td {
+      border: 1px solid #dbe2ea;
+      padding: 0.75rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #e2e8f0;
+    }
+    code {
+      background: #eef2ff;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .screenshot-card {
+      border: 1px solid #dbe2ea;
+      border-radius: 10px;
+      padding: 0.75rem;
+      background: #f8fafc;
+    }
+    .screenshot-card a {
+      display: block;
+      text-decoration: none;
+    }
+    .screenshot-card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+    .screenshot-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Responsive Testing Report</h1>
+    <h2>Summary</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Schema version</td><td>1.0</td></tr><tr><td>Generated at</td><td>2026-03-28T10:00:00Z</td></tr><tr><td>Framework</td><td>playwright</td></tr><tr><td>Target</td><td>checkout page</td></tr><tr><td>Command</td><td><code>npx playwright test tests/checkout.spec.ts --project=chromium</code></td></tr><tr><td>Reused tests</td><td>1</td></tr><tr><td>New tests</td><td>0</td></tr><tr><td>Total results</td><td>3</td></tr><tr><td>Passed</td><td>2</td></tr><tr><td>Failed</td><td>1</td></tr><tr><td>Skipped</td><td>0</td></tr></tbody></table>
+<h2>Reused Tests</h2>
+<ul><li><code>tests/checkout.spec.ts</code></li></ul>
+<h2>New Tests</h2>
+<ul><li>None</li></ul>
+<h2>Viewports</h2>
+<table><thead><tr><th>Name</th><th>Width</th><th>Height</th><th>Category</th></tr></thead><tbody><tr><td>mobile-small</td><td>375</td><td>667</td><td>mobile</td></tr><tr><td>tablet-portrait</td><td>768</td><td>1024</td><td>tablet</td></tr><tr><td>desktop-wide</td><td>1440</td><td>900</td><td>desktop</td></tr></tbody></table>
+<h2>Results</h2>
+<table><thead><tr><th>Test</th><th>Viewport</th><th>Status</th><th>Duration ms</th><th>Notes</th><th>Artifacts</th></tr></thead><tbody><tr><td>checkout happy path</td><td>desktop-wide</td><td>passed</td><td>4132</td><td>Desktop checkout layout remained stable and primary actions stayed visible.</td><td>desktop-wide-checkout.png</td></tr><tr><td>checkout happy path</td><td>mobile-small</td><td>failed</td><td>4891</td><td>Primary checkout button clipped below sticky footer.</td><td>mobile-small-checkout.png</td></tr><tr><td>checkout happy path</td><td>tablet-portrait</td><td>passed</td><td>4388</td><td>Tablet checkout layout remained stable and form sections stayed visible.</td><td>tablet-portrait-checkout.png</td></tr></tbody></table>
+<h2>Findings</h2>
+<table><thead><tr><th>Severity</th><th>Viewport</th><th>Area</th><th>Message</th><th>Artifact</th></tr></thead><tbody><tr><td>high</td><td>mobile-small</td><td>checkout footer</td><td>Primary checkout button is partially hidden by the sticky footer.</td><td>mobile-small-checkout.png</td></tr></tbody></table>
+<h2>Screenshots</h2>
+<div class="screenshots-grid"><div class="screenshot-card"><h3>desktop-wide - checkout happy path</h3><a href="desktop-wide-checkout.png"><img src="desktop-wide-checkout.png" alt="desktop-wide - checkout happy path"></a><p>Desktop checkout layout remained stable and primary actions stayed visible.</p><p><code>desktop-wide-checkout.png</code></p></div><div class="screenshot-card"><h3>mobile-small - checkout happy path</h3><a href="mobile-small-checkout.png"><img src="mobile-small-checkout.png" alt="mobile-small - checkout happy path"></a><p>Primary checkout button clipped below sticky footer.</p><p><code>mobile-small-checkout.png</code></p></div><div class="screenshot-card"><h3>tablet-portrait - checkout happy path</h3><a href="tablet-portrait-checkout.png"><img src="tablet-portrait-checkout.png" alt="tablet-portrait - checkout happy path"></a><p>Tablet checkout layout remained stable and form sections stayed visible.</p><p><code>tablet-portrait-checkout.png</code></p></div></div>
+<h2>Artifacts</h2>
+<ul><li><code>desktop-wide-checkout.png</code></li><li><code>mobile-small-checkout.png</code></li><li><code>tablet-portrait-checkout.png</code></li></ul>
+<h2>Next Actions</h2>
+<ul><li>Adjust the sticky footer layout for narrow mobile widths.</li><li>Rerun checkout responsive coverage after the layout fix.</li></ul>
+  </main>
+</body>
+</html>

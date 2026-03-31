@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.5;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+    h1, h2 {
+      color: #0f172a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    th, td {
+      border: 1px solid #dbe2ea;
+      padding: 0.75rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #e2e8f0;
+    }
+    code {
+      background: #eef2ff;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .screenshot-card {
+      border: 1px solid #dbe2ea;
+      border-radius: 10px;
+      padding: 0.75rem;
+      background: #f8fafc;
+    }
+    .screenshot-card a {
+      display: block;
+      text-decoration: none;
+    }
+    .screenshot-card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+    .screenshot-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>${title}</h1>
+    ${body}
+  </main>
+</body>
+</html>

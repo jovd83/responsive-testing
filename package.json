@@ -1,0 +1,19 @@
+{
+  "name": "responsive-testing",
+  "version": "1.0.0",
+  "description": "Responsive testing skill for AI agents that need to inspect an existing frontend test stack, reuse or extend the right tests across multiple viewport classes, and generate normalized responsive testing reports for engineering and CI workflows.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

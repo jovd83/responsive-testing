@@ -1,0 +1,5 @@
+version: 1
+interface:
+  display_name: Responsive Testing
+  short_description: Reuse or extend frontend tests across responsive viewports and generate structured reports.
+  default_prompt: Add or audit responsive frontend test coverage, reuse existing tests first, and generate a normalized report.

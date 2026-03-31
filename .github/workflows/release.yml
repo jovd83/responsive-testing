@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependency
+        run: python -m pip install --upgrade pip jsonschema
+
+      - name: Validate repository
+        run: |
+          python -m py_compile scripts/generate_responsive_report.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import jsonschema
+
+          schema = json.loads(Path("schemas/responsive-report.schema.json").read_text(encoding="utf-8"))
+          sample = json.loads(Path("examples/sample-report-input.json").read_text(encoding="utf-8"))
+          jsonschema.validate(instance=sample, schema=schema)
+          print("JSON Schema validation passed.")
+          PY
+
+      - name: Generate release demo artifacts
+        run: |
+          mkdir -p examples/generated
+          python scripts/generate_responsive_report.py \
+            --input examples/sample-report-input.json \
+            --format md html \
+            --output-dir examples/generated \
+            --strict \
+            --basename sample-responsive-report
+
+      - name: Build release archive
+        run: |
+          mkdir -p dist
+          zip -r "dist/responsive-testing-${{ github.ref_name }}.zip" \
+            SKILL.md README.md CHANGELOG.md LICENSE CONTRIBUTING.md \
+            .gitignore agents assets examples references schemas scripts .github
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/responsive-testing-${{ github.ref_name }}.zip
+            examples/generated/sample-responsive-report.md
+            examples/generated/sample-responsive-report.html
