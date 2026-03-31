@@ -186,10 +186,6 @@ Generated sample outputs are tracked in `examples/generated/`.
 
 For broader evaluation ideas, read [references/evaluation.md](references/evaluation.md).
 
-## Contributing
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
-
 ## Maintainer
 
 Maintained by `jovd:83`.
