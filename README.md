@@ -1,5 +1,7 @@
 # responsive-testing
 
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Responsive testing skill for AI agents that need to inspect an existing frontend test stack, reuse or extend the right tests across multiple viewport classes, and generate normalized responsive testing reports for engineering and CI workflows.
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
