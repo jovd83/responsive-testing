@@ -9,7 +9,7 @@ Responsive testing skill for AI agents that need to inspect an existing frontend
 ![Agent Skill](https://img.shields.io/badge/agent%20skill-open%20standard-black.svg)
 ![Report Formats](https://img.shields.io/badge/reports-json%20%7C%20md%20%7C%20html-0a7ea4.svg)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
-[![Validate Skills](https://github.com/jovd83/responsive-testing/actions/workflows/ci.yml/badge.svg)](https://github.com/jovd83/responsive-testing/actions/workflows/ci.yml)
+[![Validate Skills](https://github.com/jovd83/responsive-testing/actions/workflows/validate.yml/badge.svg)](https://github.com/jovd83/responsive-testing/actions/workflows/validate.yml)
 
 ## Why This Skill Exists
 
