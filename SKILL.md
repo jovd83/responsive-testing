@@ -156,21 +156,30 @@ license: MIT
 7. Do not mix responsive expansion with unrelated browser-matrix expansion unless the user explicitly requests both.
 8. Do not persist runtime observations as shared memory automatically.
 
-## 10. Use The Memory Model Deliberately
+## 10. Aware of Common Gotchas
+
+1. Do not assume a resized browser window behaves identically to a real mobile device; touch targets, hover states, and native scrolling often differ.
+2. Browser-based viewport resizing does not account for real-world hardware constraints, network throttling, or OS-specific rendering quirks.
+3. Avoid selectors that depend on layout structures which change between desktop and mobile (e.g., a top-level nav that becomes a hidden hamburger menu).
+4. Verify that elements "hidden" for mobile are either correctly accessible or intentionally excluded, rather than just visually obscured.
+5. Be aware that responsive transitions (like drawer slides or modal fades) may require additional wait times or interaction handling compared to static desktop layouts.
+6. Do not attempt to test every possible device; prioritize the smallest set of breakpoints that cover the most significant layout shifts.
+
+## 11. Use The Memory Model Deliberately
 
 1. Treat the current investigation, grep results, selected viewport matrix, and temporary findings as runtime memory only.
 2. Persist project-local knowledge only when the repository already has a local place for stable testing conventions, fixtures, or reusable report inputs.
 3. Do not create cross-agent shared memory inside this skill.
 4. If broader cross-repository memory is explicitly required, integrate with an external shared-memory skill instead of embedding that concern here.
 
-## 11. Read Additional References Only When Needed
+## 12. Read Additional References Only When Needed
 
 1. Read [references/framework-detection.md](references/framework-detection.md) when framework detection, reuse selection, or mixed-runner decisions are unclear.
 2. Read [references/viewport-strategy.md](references/viewport-strategy.md) when you need a default matrix, assertion priorities, or device-emulation guidance.
 3. Read [references/reporting-format.md](references/reporting-format.md) when you need the normalized report schema or rendering rules.
 4. Read [references/evaluation.md](references/evaluation.md) when you need a repeatable quality gate for this skill or a repository using it.
 
-## 12. Follow These Examples
+## 13. Follow These Examples
 
 1. Example: extend existing Playwright checkout coverage
    1. Input:
@@ -244,7 +253,7 @@ license: MIT
       Execution: not run
       ```
 
-## 13. Troubleshoot Predictably
+## 14. Troubleshoot Predictably
 
 1. Problem: framework is unclear
    1. Fix: inspect `package.json`, config files, and test directories.
@@ -270,7 +279,7 @@ license: MIT
    1. Fix: keep current findings in runtime memory unless there is an explicit local persistence location.
    2. Fix: use an external shared-memory skill for cross-agent reuse instead of extending this skill's scope.
 
-## 14. Complete The Task
+## 15. Complete The Task
 
 1. Confirm the repository was searched for reusable tests first.
 2. Confirm the framework was detected from repository evidence.
