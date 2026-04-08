@@ -2,8 +2,16 @@
 name: responsive-testing
 description: Use when an agent must plan, add, extend, or run responsive frontend testing across phones, tablets, laptops, desktops, or large screens, reuse existing tests before creating new ones, and generate a normalized responsive testing report in markdown, json, or html.
 license: MIT
+metadata:
+  dispatcher-output-artifacts: responsive_plan, responsive_results, responsive_report
+  dispatcher-risk: medium
+  dispatcher-writes-files: true
+  dispatcher-input-artifacts: responsive_scope, viewport_matrix, test_suite, environment_context
+  dispatcher-capabilities: responsive-test-planning, responsive-test-execution, responsive-reporting
+  dispatcher-stack-tags: testing, responsive, frontend
+  dispatcher-accepted-intents: plan_responsive_tests, run_responsive_tests, report_responsive_results
+  dispatcher-category: testing
 ---
-
 # Responsive Testing
 
 ## 1. Activate This Skill
