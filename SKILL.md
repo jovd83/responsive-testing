@@ -3,6 +3,9 @@ name: responsive-testing
 description: Use when an agent must plan, add, extend, or run responsive frontend testing across phones, tablets, laptops, desktops, or large screens, reuse existing tests before creating new ones, and generate a normalized responsive testing report in markdown, json, or html.
 license: MIT
 metadata:
+  version: \"1.0.0\"
+    dispatcher-layer: execution
+    dispatcher-lifecycle: active
   dispatcher-output-artifacts: responsive_plan, responsive_results, responsive_report
   dispatcher-risk: medium
   dispatcher-writes-files: true
@@ -13,6 +16,12 @@ metadata:
   dispatcher-category: testing
 ---
 # Responsive Testing
+
+
+## Telemetry & Logging
+> [!IMPORTANT]
+> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
+> `python scripts/dispatch_logger.py --skill <skill_name> --intent <intent> --reason <reason>`
 
 ## 1. Activate This Skill
 
