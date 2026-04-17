@@ -4,8 +4,8 @@ description: Use when an agent must plan, add, extend, or run responsive fronten
 license: MIT
 metadata:
   version: \"1.0.0\"
-    dispatcher-layer: execution
-    dispatcher-lifecycle: active
+  dispatcher-layer: execution
+  dispatcher-lifecycle: active
   dispatcher-output-artifacts: responsive_plan, responsive_results, responsive_report
   dispatcher-risk: medium
   dispatcher-writes-files: true
