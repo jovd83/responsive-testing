@@ -16,11 +16,6 @@ metadata:
   dispatcher-category: testing
 ---
 
-## Telemetry & Logging
-> [!IMPORTANT]
-> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
-> `./log-dispatch.cmd --skill <skill_name> --intent <intent> --reason <reason>` (or `./log-dispatch.sh` on Linux)
-
 # Responsive Testing
 
 ## 1. Activate This Skill
